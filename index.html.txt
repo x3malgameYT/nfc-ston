@@ -21,7 +21,7 @@
     </style>
     <script>
         window.onload = function() {
-            const audio = new Audio('https://www.myinstants.com/media/sounds/ah-ahh.mp3');
+            const audio = new Audio('https://www.myinstants.com/media/sounds/ston-26273.mp3');
             audio.play().catch(console.error);
         }
     </script>
