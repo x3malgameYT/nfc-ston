@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Секретный сайт</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            const audio = new Audio('https://www.myinstants.com/media/sounds/ah-ahh.mp3');
+            audio.play().catch(console.error);
+        }
+    </script>
+</head>
+<body>
+    <h1>ТЫ ПРИЛОЖИЛ МЕТКУ...</h1>
+</body>
+</html>
