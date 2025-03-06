@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Секретный сайт</title>
     <style>
         body {
@@ -32,6 +33,7 @@
 
     <script>
         function playSound() {
+            // Для мобильных устройств лучше использовать событие click, чтобы избежать проблем с автозапуском
             const audio = new Audio('https://www.myinstants.com/media/sounds/ston-26273.mp3');
             audio.play().catch(err => {
                 alert('Ошибка воспроизведения звука: ' + err.message);
