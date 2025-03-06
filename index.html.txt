@@ -13,20 +13,30 @@
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
+            flex-direction: column;
         }
         h1 {
             font-size: 3rem;
             text-align: center;
         }
-    </style>
-    <script>
-        window.onload = function() {
-            const audio = new Audio('https://www.myinstants.com/media/sounds/ston-26273.mp3');
-            audio.play().catch(console.error);
+        button {
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
-    </script>
+    </style>
 </head>
 <body>
     <h1>ТЫ ПРИЛОЖИЛ МЕТКУ...</h1>
+    <button onclick="playSound()">НАЖМИ ЧТОБЫ УСЛЫШАТЬ</button>
+
+    <script>
+        function playSound() {
+            const audio = new Audio('https://www.myinstants.com/media/sounds/ston-26273.mp3');
+            audio.play().catch(err => {
+                alert('Ошибка воспроизведения звука: ' + err.message);
+            });
+        }
+    </script>
 </body>
 </html>
