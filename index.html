@@ -2,7 +2,6 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Секретный мем</title>
     <style>
         body {
@@ -24,13 +23,10 @@
             padding: 10px 20px;
             font-size: 1.5rem;
             cursor: pointer;
-            background-color: #ff6347;
-            color: white;
-            border: none;
-            border-radius: 5px;
         }
-        button:hover {
-            background-color: #ff4500;
+        button:disabled {
+            cursor: not-allowed;
+            background-color: grey;
         }
     </style>
 </head>
@@ -38,11 +34,30 @@
     <h1>ТЫ ПРИЛОЖИЛ МЕТКУ...</h1>
     <button onclick="playSound()">НАЖМИ ЧТОБЫ УСЛЫШАТЬ</button>
 
-   <script>
-    function playSound() {
-        const audio = new Audio('https://x3malgameyt.github.io/nfc-ston/audio/ston_9zi2M1N.mp3');
-        audio.play().catch(err => {
-            alert('Ошибка воспроизведения звука: ' + err.message);
-        });
-    }
-</script>
+    <script>
+        function playSound() {
+            const button = document.querySelector("button");
+            button.disabled = true;
+
+            // Установим задержку 1 секунда перед воспроизведением
+            setTimeout(() => {
+                console.log('Воспроизведение стона через 1 секунду');
+                const audio = new Audio('https://x3malgameyt.github.io/nfc-ston/audio/ston_9zi2M1N.mp3'); // Путь к стону
+                audio.play()
+                    .then(() => {
+                        console.log('Стоны воспроизведены');
+                    })
+                    .catch(err => {
+                        console.log('Ошибка воспроизведения звука: ' + err.message);
+                        alert('Ошибка воспроизведения звука: ' + err.message);
+                    });
+
+                // Разблокируем кнопку через 3 секунды после воспроизведения
+                setTimeout(() => {
+                    button.disabled = false;
+                }, 3000); // Разблокировка через 3 секунды
+            }, 1000); // Задержка 1000 миллисекунд (1 секунда)
+        }
+    </script>
+</body>
+</html>
