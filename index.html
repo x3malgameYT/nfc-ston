@@ -2,7 +2,8 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Секретный сайт</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Секретный мем</title>
     <style>
         body {
             background-color: black;
@@ -23,6 +24,13 @@
             padding: 10px 20px;
             font-size: 1.5rem;
             cursor: pointer;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #ff4500;
         }
     </style>
 </head>
@@ -32,7 +40,8 @@
 
     <script>
         function playSound() {
-            const audio = new Audio('https://www.myinstants.com/ru/instant/ston-26273/?utm_source=copy&utm_medium=share');
+            // Ссылка на аудиофайл без загрузки
+            const audio = new Audio('https://www.myinstants.com/media/sounds/ston-26273.mp3'); // Это ссылка на mp3 файл
             audio.play().catch(err => {
                 alert('Ошибка воспроизведения звука: ' + err.message);
             });
